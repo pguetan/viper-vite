@@ -15,5 +15,5 @@ export function ReferencePage() {
     return <Navigate to="/__reference/" replace />;
   }
 
-  return <PreservedFramerPage page={page || sitePages.home} />;
+  return <PreservedFramerPage page={page || sitePages.home} syncRoute={false} />;
 }

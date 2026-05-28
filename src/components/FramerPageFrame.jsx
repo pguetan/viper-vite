@@ -9,14 +9,14 @@ function routeFromMirrorPath(pathname) {
   });
 }
 
-export function FramerPageFrame({ source, title }) {
+export function FramerPageFrame({ source, title, syncRoute = true }) {
   const location = useLocation();
   const navigate = useNavigate();
 
   const handleLoad = useCallback(
     (event) => {
       const frameWindow = event.currentTarget.contentWindow;
-      if (!frameWindow) return;
+      if (!frameWindow || !syncRoute) return;
 
       try {
         const route = routeFromMirrorPath(frameWindow.location.pathname);
@@ -27,7 +27,7 @@ export function FramerPageFrame({ source, title }) {
         // The mirrored site is same-origin locally, but keep this resilient for unusual deploy setups.
       }
     },
-    [location.pathname, navigate],
+    [location.pathname, navigate, syncRoute],
   );
 
   return (

@@ -1,8 +1,8 @@
+import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AboutPage } from "./pages/AboutPage.jsx";
 import { AudemarsPiguetPage } from "./pages/AudemarsPiguetPage.jsx";
 import { BlogPage } from "./pages/BlogPage.jsx";
-import { ContactPage } from "./pages/ContactPage.jsx";
 import { GlobalNikonMeetupPage } from "./pages/GlobalNikonMeetupPage.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
 import { MaisonLawPage } from "./pages/MaisonLawPage.jsx";
@@ -12,6 +12,14 @@ import { RavenClawPage } from "./pages/RavenClawPage.jsx";
 import { ReferencePage } from "./pages/ReferencePage.jsx";
 import { WillowStudioPage } from "./pages/WillowStudioPage.jsx";
 import { WorkPage } from "./pages/WorkPage.jsx";
+
+const ContactPage = lazy(() =>
+  import("./pages/ContactPage.jsx").then((module) => ({ default: module.ContactPage })),
+);
+
+function lazyPage(element) {
+  return <Suspense fallback={null}>{element}</Suspense>;
+}
 
 export function App() {
   return (
@@ -27,7 +35,7 @@ export function App() {
       <Route path="/blog/polestar-new-ev" element={<PolestarNewEvPage />} />
       <Route path="/blog/audemars-piguet" element={<AudemarsPiguetPage />} />
       <Route path="/blog/global-nikon-meetup" element={<GlobalNikonMeetupPage />} />
-      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/contact" element={lazyPage(<ContactPage />)} />
       <Route path="/__reference/*" element={<ReferencePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
