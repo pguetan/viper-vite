@@ -9,6 +9,7 @@ import { MaisonLawPage } from "./pages/MaisonLawPage.jsx";
 import { MysticMeadowsPage } from "./pages/MysticMeadowsPage.jsx";
 import { PolestarNewEvPage } from "./pages/PolestarNewEvPage.jsx";
 import { RavenClawPage } from "./pages/RavenClawPage.jsx";
+import { ReferencePage } from "./pages/ReferencePage.jsx";
 import { WillowStudioPage } from "./pages/WillowStudioPage.jsx";
 import { WorkPage } from "./pages/WorkPage.jsx";
 
@@ -27,6 +28,7 @@ export function App() {
       <Route path="/blog/audemars-piguet" element={<AudemarsPiguetPage />} />
       <Route path="/blog/global-nikon-meetup" element={<GlobalNikonMeetupPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/__reference/*" element={<ReferencePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

@@ -117,3 +117,17 @@ Deploy the contents of `react-dist/` for the Vite + React app. Deploy the conten
 For cloud deployment, configure the host to serve `react-dist/index.html` as the fallback for direct route loads such as `/contact` or `/work/raven-claw`.
 
 The floating Framer badge and duplicate "Use for Free" control are hidden in the offline mirror. The contact form is shimmed for offline/static preview and does not send messages unless connected to a real form backend.
+
+## Native JSX Migration Branch
+
+The `native-jsx-pages` branch is for converting pages one at a time while keeping the current mirrored version as the visual reference.
+
+Reference routes are available under `/__reference`, for example:
+
+```text
+/__reference/contact
+/__reference/about
+/__reference/work/raven-claw
+```
+
+See `docs/native-jsx-migration.md` for the conversion rules and QA gate.

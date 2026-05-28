@@ -62,3 +62,7 @@ export const sitePages = {
 };
 
 export const siteRoutes = Object.values(sitePages);
+
+export function pageForPath(pathname) {
+  return siteRoutes.find((page) => page.path === pathname);
+}
