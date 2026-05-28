@@ -1,0 +1,7 @@
+node_modules/
+react-dist/
+public/assets/
+public/mirror/
+.vite/
+output/
+vite-preview.*.log

@@ -1,0 +1,19 @@
+{
+  "origin": "https://viper-template.framer.website",
+  "routes": [
+    "/",
+    "/about",
+    "/blog",
+    "/blog/audemars-piguet",
+    "/blog/global-nikon-meetup",
+    "/blog/polestar-new-ev",
+    "/contact",
+    "/work",
+    "/work/maison-law",
+    "/work/mystic-meadows",
+    "/work/raven-claw",
+    "/work/willow-studio"
+  ],
+  "assets": 416,
+  "generatedAt": "2026-05-28T02:27:34.934Z"
+}
