@@ -14,6 +14,11 @@ const pages = {
     output: path.join(root, "src", "generated", "contactFramerDocument.js"),
     exportName: "contactFramerDocument",
   },
+  mysticMeadows: {
+    input: path.join(root, "dist", "work", "mystic-meadows", "index.html"),
+    output: path.join(root, "src", "generated", "mysticMeadowsFramerDocument.js"),
+    exportName: "mysticMeadowsFramerDocument",
+  },
 };
 
 function normalizeHtml(html) {

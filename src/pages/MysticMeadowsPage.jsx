@@ -1,6 +1,6 @@
-import { PreservedFramerPage } from "../components/PreservedFramerPage.jsx";
-import { sitePages } from "../data/siteRoutes.js";
+import { FramerDocumentPage } from "../components/FramerDocumentPage.jsx";
+import { mysticMeadowsFramerDocument } from "../generated/mysticMeadowsFramerDocument.js";
 
 export function MysticMeadowsPage() {
-  return <PreservedFramerPage page={sitePages.mysticMeadows} />;
+  return <FramerDocumentPage document={mysticMeadowsFramerDocument} />;
 }

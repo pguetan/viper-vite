@@ -6,6 +6,7 @@
   "scripts": {
     "extract:home": "node tools/extract-framer-document.mjs home",
     "extract:contact": "node tools/extract-framer-document.mjs contact",
+    "extract:mystic-meadows": "node tools/extract-framer-document.mjs mysticMeadows",
     "prepare:mirror": "node tools/prepare-vite-public.mjs",
     "dev": "npm run prepare:mirror && vite --host 127.0.0.1",
     "build": "npm run prepare:mirror && vite build && node tools/finalize-vite-build.mjs",

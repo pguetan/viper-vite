@@ -5,7 +5,6 @@ import { AudemarsPiguetPage } from "./pages/AudemarsPiguetPage.jsx";
 import { BlogPage } from "./pages/BlogPage.jsx";
 import { GlobalNikonMeetupPage } from "./pages/GlobalNikonMeetupPage.jsx";
 import { MaisonLawPage } from "./pages/MaisonLawPage.jsx";
-import { MysticMeadowsPage } from "./pages/MysticMeadowsPage.jsx";
 import { PolestarNewEvPage } from "./pages/PolestarNewEvPage.jsx";
 import { RavenClawPage } from "./pages/RavenClawPage.jsx";
 import { ReferencePage } from "./pages/ReferencePage.jsx";
@@ -17,6 +16,9 @@ const ContactPage = lazy(() =>
 );
 const HomePage = lazy(() =>
   import("./pages/HomePage.jsx").then((module) => ({ default: module.HomePage })),
+);
+const MysticMeadowsPage = lazy(() =>
+  import("./pages/MysticMeadowsPage.jsx").then((module) => ({ default: module.MysticMeadowsPage })),
 );
 
 function lazyPage(element) {
@@ -32,7 +34,7 @@ export function App() {
       <Route path="/work/raven-claw" element={<RavenClawPage />} />
       <Route path="/work/willow-studio" element={<WillowStudioPage />} />
       <Route path="/work/maison-law" element={<MaisonLawPage />} />
-      <Route path="/work/mystic-meadows" element={<MysticMeadowsPage />} />
+      <Route path="/work/mystic-meadows" element={lazyPage(<MysticMeadowsPage />)} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/blog/polestar-new-ev" element={<PolestarNewEvPage />} />
       <Route path="/blog/audemars-piguet" element={<AudemarsPiguetPage />} />
