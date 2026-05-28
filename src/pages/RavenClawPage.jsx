@@ -1,6 +1,6 @@
-import { PreservedFramerPage } from "../components/PreservedFramerPage.jsx";
-import { sitePages } from "../data/siteRoutes.js";
+import { FramerDocumentPage } from "../components/FramerDocumentPage.jsx";
+import { ravenClawFramerDocument } from "../generated/ravenClawFramerDocument.js";
 
 export function RavenClawPage() {
-  return <PreservedFramerPage page={sitePages.ravenClaw} />;
+  return <FramerDocumentPage document={ravenClawFramerDocument} />;
 }

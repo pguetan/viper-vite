@@ -1,6 +1,6 @@
-import { PreservedFramerPage } from "../components/PreservedFramerPage.jsx";
-import { sitePages } from "../data/siteRoutes.js";
+import { FramerDocumentPage } from "../components/FramerDocumentPage.jsx";
+import { maisonLawFramerDocument } from "../generated/maisonLawFramerDocument.js";
 
 export function MaisonLawPage() {
-  return <PreservedFramerPage page={sitePages.maisonLaw} />;
+  return <FramerDocumentPage document={maisonLawFramerDocument} />;
 }

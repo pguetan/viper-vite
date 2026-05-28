@@ -1,6 +1,6 @@
-import { PreservedFramerPage } from "../components/PreservedFramerPage.jsx";
-import { sitePages } from "../data/siteRoutes.js";
+import { FramerDocumentPage } from "../components/FramerDocumentPage.jsx";
+import { willowStudioFramerDocument } from "../generated/willowStudioFramerDocument.js";
 
 export function WillowStudioPage() {
-  return <PreservedFramerPage page={sitePages.willowStudio} />;
+  return <FramerDocumentPage document={willowStudioFramerDocument} />;
 }

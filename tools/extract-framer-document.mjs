@@ -14,6 +14,26 @@ const pages = {
     output: path.join(root, "src", "generated", "contactFramerDocument.js"),
     exportName: "contactFramerDocument",
   },
+  work: {
+    input: path.join(root, "dist", "work", "index.html"),
+    output: path.join(root, "src", "generated", "workFramerDocument.js"),
+    exportName: "workFramerDocument",
+  },
+  ravenClaw: {
+    input: path.join(root, "dist", "work", "raven-claw", "index.html"),
+    output: path.join(root, "src", "generated", "ravenClawFramerDocument.js"),
+    exportName: "ravenClawFramerDocument",
+  },
+  willowStudio: {
+    input: path.join(root, "dist", "work", "willow-studio", "index.html"),
+    output: path.join(root, "src", "generated", "willowStudioFramerDocument.js"),
+    exportName: "willowStudioFramerDocument",
+  },
+  maisonLaw: {
+    input: path.join(root, "dist", "work", "maison-law", "index.html"),
+    output: path.join(root, "src", "generated", "maisonLawFramerDocument.js"),
+    exportName: "maisonLawFramerDocument",
+  },
   mysticMeadows: {
     input: path.join(root, "dist", "work", "mystic-meadows", "index.html"),
     output: path.join(root, "src", "generated", "mysticMeadowsFramerDocument.js"),

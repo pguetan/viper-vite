@@ -6,6 +6,10 @@
   "scripts": {
     "extract:home": "node tools/extract-framer-document.mjs home",
     "extract:contact": "node tools/extract-framer-document.mjs contact",
+    "extract:work": "node tools/extract-framer-document.mjs work",
+    "extract:raven-claw": "node tools/extract-framer-document.mjs ravenClaw",
+    "extract:willow-studio": "node tools/extract-framer-document.mjs willowStudio",
+    "extract:maison-law": "node tools/extract-framer-document.mjs maisonLaw",
     "extract:mystic-meadows": "node tools/extract-framer-document.mjs mysticMeadows",
     "prepare:mirror": "node tools/prepare-vite-public.mjs",
     "dev": "npm run prepare:mirror && vite --host 127.0.0.1",
