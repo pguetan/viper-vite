@@ -33,3 +33,9 @@ body {
 .native-framer-document {
   min-height: 100vh;
 }
+
+.native-framer-document .framer-gctuvv-container {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

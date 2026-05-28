@@ -4,6 +4,11 @@ import path from "node:path";
 const root = process.cwd();
 
 const pages = {
+  home: {
+    input: path.join(root, "dist", "index.html"),
+    output: path.join(root, "src", "generated", "homeFramerDocument.js"),
+    exportName: "homeFramerDocument",
+  },
   contact: {
     input: path.join(root, "dist", "contact", "index.html"),
     output: path.join(root, "src", "generated", "contactFramerDocument.js"),

@@ -4,7 +4,6 @@ import { AboutPage } from "./pages/AboutPage.jsx";
 import { AudemarsPiguetPage } from "./pages/AudemarsPiguetPage.jsx";
 import { BlogPage } from "./pages/BlogPage.jsx";
 import { GlobalNikonMeetupPage } from "./pages/GlobalNikonMeetupPage.jsx";
-import { HomePage } from "./pages/HomePage.jsx";
 import { MaisonLawPage } from "./pages/MaisonLawPage.jsx";
 import { MysticMeadowsPage } from "./pages/MysticMeadowsPage.jsx";
 import { PolestarNewEvPage } from "./pages/PolestarNewEvPage.jsx";
@@ -16,6 +15,9 @@ import { WorkPage } from "./pages/WorkPage.jsx";
 const ContactPage = lazy(() =>
   import("./pages/ContactPage.jsx").then((module) => ({ default: module.ContactPage })),
 );
+const HomePage = lazy(() =>
+  import("./pages/HomePage.jsx").then((module) => ({ default: module.HomePage })),
+);
 
 function lazyPage(element) {
   return <Suspense fallback={null}>{element}</Suspense>;
@@ -24,7 +26,7 @@ function lazyPage(element) {
 export function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={lazyPage(<HomePage />)} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/work" element={<WorkPage />} />
       <Route path="/work/raven-claw" element={<RavenClawPage />} />

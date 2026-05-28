@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "extract:home": "node tools/extract-framer-document.mjs home",
     "extract:contact": "node tools/extract-framer-document.mjs contact",
     "prepare:mirror": "node tools/prepare-vite-public.mjs",
     "dev": "npm run prepare:mirror && vite --host 127.0.0.1",

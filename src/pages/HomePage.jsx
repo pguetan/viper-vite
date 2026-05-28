@@ -1,6 +1,6 @@
-import { PreservedFramerPage } from "../components/PreservedFramerPage.jsx";
-import { sitePages } from "../data/siteRoutes.js";
+import { FramerDocumentPage } from "../components/FramerDocumentPage.jsx";
+import { homeFramerDocument } from "../generated/homeFramerDocument.js";
 
 export function HomePage() {
-  return <PreservedFramerPage page={sitePages.home} />;
+  return <FramerDocumentPage document={homeFramerDocument} />;
 }
