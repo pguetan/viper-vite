@@ -9,9 +9,13 @@ The React app is preservation-first: routes render extracted Framer documents th
 ```text
 viper-agency/
 |-- README.md
+|-- .gitignore
 |-- package.json
+|-- package-lock.json
 |-- index.html
 |-- vite.config.js
+|-- docs/
+|   `-- native-jsx-migration.md
 |-- dist/
 |   |-- index.html
 |   |-- about/
@@ -34,16 +38,31 @@ viper-agency/
 |   |   `-- PreservedFramerPage.jsx
 |   |-- generated/
 |   |   |-- aboutFramerDocument.js
-|   |   |-- homeFramerDocument.js
-|   |   |-- workFramerDocument.js
+|   |   |-- audemarsPiguetFramerDocument.js
 |   |   |-- blogFramerDocument.js
-|   |   `-- contactFramerDocument.js
+|   |   |-- homeFramerDocument.js
+|   |   |-- contactFramerDocument.js
+|   |   |-- globalNikonMeetupFramerDocument.js
+|   |   |-- maisonLawFramerDocument.js
+|   |   |-- mysticMeadowsFramerDocument.js
+|   |   |-- polestarNewEvFramerDocument.js
+|   |   |-- ravenClawFramerDocument.js
+|   |   |-- willowStudioFramerDocument.js
+|   |   |-- workFramerDocument.js
 |   |-- pages/
-|       |-- HomePage.jsx
 |       |-- AboutPage.jsx
-|       |-- WorkPage.jsx
+|       |-- AudemarsPiguetPage.jsx
 |       |-- BlogPage.jsx
-|       `-- ContactPage.jsx
+|       |-- ContactPage.jsx
+|       |-- GlobalNikonMeetupPage.jsx
+|       |-- HomePage.jsx
+|       |-- MaisonLawPage.jsx
+|       |-- MysticMeadowsPage.jsx
+|       |-- PolestarNewEvPage.jsx
+|       |-- RavenClawPage.jsx
+|       |-- ReferencePage.jsx
+|       |-- WillowStudioPage.jsx
+|       `-- WorkPage.jsx
 |   `-- data/
 |       `-- siteRoutes.js
 |-- tools/
