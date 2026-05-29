@@ -1,6 +1,6 @@
-import { PreservedFramerPage } from "../components/PreservedFramerPage.jsx";
-import { sitePages } from "../data/siteRoutes.js";
+import { FramerDocumentPage } from "../components/FramerDocumentPage.jsx";
+import { audemarsPiguetFramerDocument } from "../generated/audemarsPiguetFramerDocument.js";
 
 export function AudemarsPiguetPage() {
-  return <PreservedFramerPage page={sitePages.audemarsPiguet} />;
+  return <FramerDocumentPage document={audemarsPiguetFramerDocument} />;
 }

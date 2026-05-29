@@ -1,6 +1,6 @@
-import { PreservedFramerPage } from "../components/PreservedFramerPage.jsx";
-import { sitePages } from "../data/siteRoutes.js";
+import { FramerDocumentPage } from "../components/FramerDocumentPage.jsx";
+import { polestarNewEvFramerDocument } from "../generated/polestarNewEvFramerDocument.js";
 
 export function PolestarNewEvPage() {
-  return <PreservedFramerPage page={sitePages.polestarNewEv} />;
+  return <FramerDocumentPage document={polestarNewEvFramerDocument} />;
 }

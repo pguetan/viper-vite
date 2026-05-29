@@ -1,10 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AboutPage } from "./pages/AboutPage.jsx";
-import { AudemarsPiguetPage } from "./pages/AudemarsPiguetPage.jsx";
-import { BlogPage } from "./pages/BlogPage.jsx";
-import { GlobalNikonMeetupPage } from "./pages/GlobalNikonMeetupPage.jsx";
-import { PolestarNewEvPage } from "./pages/PolestarNewEvPage.jsx";
 import { ReferencePage } from "./pages/ReferencePage.jsx";
 
 const ContactPage = lazy(() =>
@@ -28,6 +24,20 @@ const WillowStudioPage = lazy(() =>
 const WorkPage = lazy(() =>
   import("./pages/WorkPage.jsx").then((module) => ({ default: module.WorkPage })),
 );
+const AudemarsPiguetPage = lazy(() =>
+  import("./pages/AudemarsPiguetPage.jsx").then((module) => ({ default: module.AudemarsPiguetPage })),
+);
+const BlogPage = lazy(() =>
+  import("./pages/BlogPage.jsx").then((module) => ({ default: module.BlogPage })),
+);
+const GlobalNikonMeetupPage = lazy(() =>
+  import("./pages/GlobalNikonMeetupPage.jsx").then((module) => ({
+    default: module.GlobalNikonMeetupPage,
+  })),
+);
+const PolestarNewEvPage = lazy(() =>
+  import("./pages/PolestarNewEvPage.jsx").then((module) => ({ default: module.PolestarNewEvPage })),
+);
 
 function lazyPage(element) {
   return <Suspense fallback={null}>{element}</Suspense>;
@@ -43,10 +53,10 @@ export function App() {
       <Route path="/work/willow-studio" element={lazyPage(<WillowStudioPage />)} />
       <Route path="/work/maison-law" element={lazyPage(<MaisonLawPage />)} />
       <Route path="/work/mystic-meadows" element={lazyPage(<MysticMeadowsPage />)} />
-      <Route path="/blog" element={<BlogPage />} />
-      <Route path="/blog/polestar-new-ev" element={<PolestarNewEvPage />} />
-      <Route path="/blog/audemars-piguet" element={<AudemarsPiguetPage />} />
-      <Route path="/blog/global-nikon-meetup" element={<GlobalNikonMeetupPage />} />
+      <Route path="/blog" element={lazyPage(<BlogPage />)} />
+      <Route path="/blog/polestar-new-ev" element={lazyPage(<PolestarNewEvPage />)} />
+      <Route path="/blog/audemars-piguet" element={lazyPage(<AudemarsPiguetPage />)} />
+      <Route path="/blog/global-nikon-meetup" element={lazyPage(<GlobalNikonMeetupPage />)} />
       <Route path="/contact" element={lazyPage(<ContactPage />)} />
       <Route path="/__reference/*" element={<ReferencePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />

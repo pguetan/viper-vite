@@ -39,6 +39,26 @@ const pages = {
     output: path.join(root, "src", "generated", "mysticMeadowsFramerDocument.js"),
     exportName: "mysticMeadowsFramerDocument",
   },
+  blog: {
+    input: path.join(root, "dist", "blog", "index.html"),
+    output: path.join(root, "src", "generated", "blogFramerDocument.js"),
+    exportName: "blogFramerDocument",
+  },
+  polestarNewEv: {
+    input: path.join(root, "dist", "blog", "polestar-new-ev", "index.html"),
+    output: path.join(root, "src", "generated", "polestarNewEvFramerDocument.js"),
+    exportName: "polestarNewEvFramerDocument",
+  },
+  audemarsPiguet: {
+    input: path.join(root, "dist", "blog", "audemars-piguet", "index.html"),
+    output: path.join(root, "src", "generated", "audemarsPiguetFramerDocument.js"),
+    exportName: "audemarsPiguetFramerDocument",
+  },
+  globalNikonMeetup: {
+    input: path.join(root, "dist", "blog", "global-nikon-meetup", "index.html"),
+    output: path.join(root, "src", "generated", "globalNikonMeetupFramerDocument.js"),
+    exportName: "globalNikonMeetupFramerDocument",
+  },
 };
 
 function normalizeHtml(html) {
