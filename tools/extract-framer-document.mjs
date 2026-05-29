@@ -9,6 +9,11 @@ const pages = {
     output: path.join(root, "src", "generated", "homeFramerDocument.js"),
     exportName: "homeFramerDocument",
   },
+  about: {
+    input: path.join(root, "dist", "about", "index.html"),
+    output: path.join(root, "src", "generated", "aboutFramerDocument.js"),
+    exportName: "aboutFramerDocument",
+  },
   contact: {
     input: path.join(root, "dist", "contact", "index.html"),
     output: path.join(root, "src", "generated", "contactFramerDocument.js"),

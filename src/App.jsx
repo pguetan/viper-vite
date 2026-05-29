@@ -1,8 +1,10 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { AboutPage } from "./pages/AboutPage.jsx";
 import { ReferencePage } from "./pages/ReferencePage.jsx";
 
+const AboutPage = lazy(() =>
+  import("./pages/AboutPage.jsx").then((module) => ({ default: module.AboutPage })),
+);
 const ContactPage = lazy(() =>
   import("./pages/ContactPage.jsx").then((module) => ({ default: module.ContactPage })),
 );
@@ -47,7 +49,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/" element={lazyPage(<HomePage />)} />
-      <Route path="/about" element={<AboutPage />} />
+      <Route path="/about" element={lazyPage(<AboutPage />)} />
       <Route path="/work" element={lazyPage(<WorkPage />)} />
       <Route path="/work/raven-claw" element={lazyPage(<RavenClawPage />)} />
       <Route path="/work/willow-studio" element={lazyPage(<WillowStudioPage />)} />

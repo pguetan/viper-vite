@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "extract:home": "node tools/extract-framer-document.mjs home",
+    "extract:about": "node tools/extract-framer-document.mjs about",
     "extract:contact": "node tools/extract-framer-document.mjs contact",
     "extract:work": "node tools/extract-framer-document.mjs work",
     "extract:raven-claw": "node tools/extract-framer-document.mjs ravenClaw",
