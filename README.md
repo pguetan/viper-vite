@@ -1,8 +1,8 @@
 # Viper Agency
 
-Offline/static mirror of `https://viper-template.framer.website/`, plus a Vite + React wrapper app that preserves the original Framer pages, layouts, media, interactions, and animations.
+Offline/static Vite + React version of the Viper agency site. The app preserves the original pages, layouts, media, interactions, and animations for local preview and cloud deployment.
 
-The React app is intentionally preservation-first: routes render the mirrored Framer HTML inside a full-window frame. This keeps the original visuals intact while still giving the project a Vite/React build, routing layer, and deployment package. Migrating individual pages into native React components is possible later, but it should be treated as a redesign/rebuild step because exact Framer parity is hard to guarantee by hand.
+The React app is preservation-first: routes render extracted Framer documents through reusable React page components. This keeps the original DOM, class names, CSS, media references, interactions, and animation runtime intact while still giving the project a Vite/React build, routing layer, and deployment package.
 
 ## File Structure
 
@@ -29,8 +29,15 @@ viper-agency/
 |   |-- main.jsx
 |   |-- styles.css
 |   |-- components/
+|   |   |-- FramerDocumentPage.jsx
 |   |   |-- FramerPageFrame.jsx
 |   |   `-- PreservedFramerPage.jsx
+|   |-- generated/
+|   |   |-- aboutFramerDocument.js
+|   |   |-- homeFramerDocument.js
+|   |   |-- workFramerDocument.js
+|   |   |-- blogFramerDocument.js
+|   |   `-- contactFramerDocument.js
 |   |-- pages/
 |       |-- HomePage.jsx
 |       |-- AboutPage.jsx
@@ -40,6 +47,7 @@ viper-agency/
 |   `-- data/
 |       `-- siteRoutes.js
 |-- tools/
+|   |-- extract-framer-document.mjs
 |   |-- mirror-framer-site.mjs
 |   |-- prepare-vite-public.mjs
 |   `-- finalize-vite-build.mjs
@@ -93,11 +101,18 @@ All site routes are available in the React preview, including:
 /
 /about
 /work
+/work/raven-claw
+/work/willow-studio
+/work/maison-law
+/work/mystic-meadows
 /blog
+/blog/polestar-new-ev
+/blog/audemars-piguet
+/blog/global-nikon-meetup
 /contact
 ```
 
-Each route has a React page component under `src/pages/`. Those components intentionally preserve the generated Framer document by rendering the mirrored page through the shared `PreservedFramerPage` and `FramerPageFrame` components. This keeps the original DOM, class names, CSS, media references, interactions, and Framer animation runtime intact.
+Each route has a React page component under `src/pages/`. Those components render generated document modules from `src/generated/` through the shared `FramerDocumentPage` component. This keeps the original visual and interaction behavior intact while making each page part of the Vite/React route tree.
 
 ## React Production Build
 
@@ -112,17 +127,15 @@ Then open:
 http://127.0.0.1:4174/
 ```
 
-Deploy the contents of `react-dist/` for the Vite + React app. Deploy the contents of `dist/` only if you want the original static mirror instead.
+Deploy the contents of `react-dist/` for the Vite + React app. Deploy the contents of `dist/` only if you want the static mirror instead.
 
 For cloud deployment, configure the host to serve `react-dist/index.html` as the fallback for direct route loads such as `/contact` or `/work/raven-claw`.
 
-The floating Framer badge and duplicate "Use for Free" control are hidden in the offline mirror. The contact form is shimmed for offline/static preview and does not send messages unless connected to a real form backend.
+The floating Framer badge and duplicate "Use for Free" control are hidden in the offline and React previews. The contact form is shimmed for offline/static preview and does not send messages unless connected to a real form backend.
 
-## Native JSX Migration Branch
+## Reference Routes
 
-The `native-jsx-pages` branch is for converting pages one at a time while keeping the current mirrored version as the visual reference.
-
-Reference routes are available under `/__reference`, for example:
+Preserved reference routes are available under `/__reference` for visual QA, for example:
 
 ```text
 /__reference/contact
